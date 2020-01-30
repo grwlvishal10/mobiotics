@@ -69,9 +69,16 @@
     <p><b>MRP</b>&nbsp;{{dt.MRF}}</p>
     <p><b>RS&nbsp;{{dt.Price}}</b></p>
     <div layout="row" layout-xs="column">
-    <div flex><button style="background-color:green;color:white;border:0px;padding:5px;"  ng-click="incValue(dt,1)">ADD CART</button></div>
-    <div flex><button  style="border-radius:3px;" ng-click="incValue(dt,1)">+</button>&nbsp;{{dt.value}}
-    <button style="border-radius:3px;" ng-click="incValue(dt,0)">-</button></div> 
+    <div flex><md-button style="background-color:#FF6653;color:white;border-radius:10px;"  ng-click="incValue(dt,1)">ADD CART</md-button></div>
+    <div flex><md-button style="background-color: darkgray;
+    min-width: 16px !important;
+    border-radius: 10px;
+    line-height: 20px !important;"  ng-click="incValue(dt,1)">+</md-button>&nbsp;{{dt.value}}
+    <md-button style="background-color: darkgray;
+    min-width: 16px !important;
+   border-radius: 10px;
+    line-height: 20px !important;"  ng-click="incValue(dt,0)">-</md-button></div> 
+    </div> 
     </div>
    </div>
    </div>
