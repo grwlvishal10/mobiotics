@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <title>Example - example-forms-simple-production</title>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
 <!-- Angular Material Library -->
@@ -57,17 +58,17 @@
   <div layout="row" layout-align="center center" layout-margin layout-padding>
   <div flex="80" flex-xs="90" layout="column">
   <div layout="row" ng-repeat="dt in dt1">
-  <div flex flex-xs="60"> 
+  <div flex flex-xs="50"> 
   <img src="{{dt.Image_URL}}" width="75%" height="75%">
   <p style="text-align:center">{{dt.Offer_Text}}</p>
   </div>
-   <div flex flex-xs="40">
+   <div flex flex-xs="50">
     <h2>{{dt.Brand_name}}</h2>
     <p>{{dt.Product_name}}</p>
     <p>{{dt.Quantity}}</p>
     <p><b>MRP</b>&nbsp;{{dt.MRF}}</p>
     <p><b>RS&nbsp;{{dt.Price}}</b></p>
-    <div layout="row">
+    <div layout="row" layout-xs="column">
     <div flex><button style="background-color:green;color:white;border:0px;padding:5px;"  ng-click="incValue(dt,1)">ADD CART</button></div>
     <div flex><button  style="border-radius:3px;" ng-click="incValue(dt,1)">+</button>&nbsp;{{dt.value}}
     <button style="border-radius:3px;" ng-click="incValue(dt,0)">-</button></div> 
