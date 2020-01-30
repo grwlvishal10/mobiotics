@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-forms-simple-production</title>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+<!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+  <style>
+  .modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  height:50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+ 
+}
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.close {
+  color: white;
+
+  font-size: 32px;
+  font-weight: bold;
+}
+  </style>
+</head>
+<body ng-app="formExample">
+  <div ng-controller="ExampleController">
+  <div style="text-align:center;"><h2>MOBIOTICS ASSIGNMENT</h2></div>
+  <div layout="row" layout-align="center center" layout-margin layout-padding>
+  <div flex="60" flex-xs="90" layout="column">
+  <div layout="row" ng-repeat="dt in dt1">
+  <div flex flex-xs="60"> 
+  <img src="{{dt.Image_URL}}" width="300" height="250">
+  <p style="text-align:center">{{dt.Offer_Text}}</p>
+  </div>
+   <div flex flex-xs="40">
+    <h2>{{dt.Brand_name}}</h2>
+    <p>{{dt.Product_name}}</p>
+    <p>{{dt.Quantity}}</p>
+    <p><b>MRP</b>&nbsp;{{dt.MRF}}</p>
+    <p><b>RS&nbsp;{{dt.Price}}</b></p>
+    <div layout="row">
+    <div flex><button style="background-color:green;color:white;border:0px;padding:5px;"  ng-click="incValue(dt,1)">ADD CART</button></div>
+    <div flex><button style="border-radius:3px;" ng-click="incValue(dt,1)">+</button>&nbsp;{{dt.value}}
+    <button style="border-radius:3px;" ng-click="incValue(dt,0)">-</button></div> 
+    </div>
+   </div>
+   </div>
+   <div layout="row">
+   <div flex><b>Total Price : </b> {{totalPrice}}</div>
+   <div flex><b>Total Quantity :</b> {{totalQuantity}}</div>
+   <div flex><button ng-click="checkoutButton()" style="border:0px;padding:5pcx;width:100px;height:30px;background-color:green;color:white;"> Checkout</button>
+   </div>
+   </div>
+   <div id="myModal" class="modal">
+      <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" ng-click="close()">&times;</span>
+    </div>
+    <div style="text-align:center;margin:auto">
+      <p ><b>Total Price : </b> {{totalPrice}} </p>
+      <p style="color:green">Transaction successful</p>
+    </div>
+  </div>
+
+</div>
+  </div>
+  </div>
+</div>
+<script>
+  angular.module('formExample', ['ngMaterial'])
+    .controller('ExampleController', ['$scope','$http', function($scope, $http) {
+          $http({
+            method : "GET",
+            url : "https://grwlvishal10.github.io/mobiotics/mobiotics.json"
+            }).then(function mySuccess(response) {
+                $scope.dt1 = response.data;
+                console.log($scope.dt1);
+            }, function myError(response) {
+                $scope.dt1 = response.statusText;
+                console.log(dt1);
+               });
+        
+          $scope.totalValue = [];
+          $scope.totalQuantity =0;
+          $scope.totalPrice =0;
+        
+          $scope.incValue = function(data,flag){
+            if(flag ===1){
+             data.value = data.value+1;
+             $scope.totalValue.push(data);
+             let newArray = []; 
+            let uniqueObject = {}; 
+            for (let i in $scope.totalValue) { 
+                objTitle = $scope.totalValue[i]['id']; 
+                uniqueObject[objTitle] = $scope.totalValue[i]; 
+            } 
+            for (i in uniqueObject) { 
+                newArray.push(uniqueObject[i]); 
+            } 
+
+            $scope.newData = newArray;
+            for(x in $scope.newData){
+              if($scope.newData[x]['id']==data.id){
+                $scope.totalQuantity  += 1;
+                $scope.totalPrice+=data.Price;
+              }
+            } 
+            }
+            else
+            {
+              data.value = data.value-1;
+              $scope.totalValue.pop(data);
+              for(x in $scope.newData){
+              if($scope.newData[x]['id']==data.id){
+                $scope.totalQuantity  -= 1;
+                $scope.totalPrice-=data.Price;
+              }
+            } 
+            }
+          };
+          console.log($scope.totalValue);
+          $scope.checkoutButton = function(){
+             document.getElementById("myModal").style.display = "block";
+          }
+
+          $scope.close = function(){
+            document.getElementById("myModal").style.display = "none";
+          }
+          
+    }]);
+</script>
+</body>
+</html>
