@@ -1,0 +1,112 @@
+[
+{
+    "id": 1,
+	"Brand_name": "Levis",
+	"Product_name": "Women Jeans",
+	"Quantity":10,
+	"Price":3000,
+	"MRF":2500,
+	"Image_URL":"https://www.hautelookcdn.com/products/L9933/large/10731040.jpg",
+	"Offer_Text":"50% OFF",
+	"value":0
+},
+{   
+    "id": 2,
+	"Brand_name": "Wrangler",
+	"Product_name": "Women Jeans",
+	"Quantity":10,
+	"Price":1800,
+	"MRF":2500,
+	"Image_URL":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOYyiV8of5O-dxd9nn-xcY7M6VjlxaAge7uVgDsC5o-Qd10wPsw&s",
+	"Offer_Text":"50% OFF",
+	"value":0
+},
+{    
+    "id": 3,
+	"Brand_name": "Lee",
+	"Product_name": "Women Jeans",
+	"Quantity":10,
+	"Price":1250,
+	"MRF":2500,
+	"Image_URL":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLrFYciUusbSF64yUFjptSgj2lgj8SQnk8CSVkRNMOxWx1n7vAlQ&s",
+	"Offer_Text":"50% OFF",
+	"value":0
+},
+{    
+    "id": 4,
+	"Brand_name": "Spykar",
+	"Product_name": "Men Jeans",
+	"Quantity":10,
+	"Price":1700,
+	"MRF":2500,
+	"Image_URL":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8375987/2019/2/22/1e7669b5-ce31-426d-8378-2051d723f1231550830927269-Campus-Sutra-Men-Blue-Slim-Fit-Mid-Rise-Mildly-Distressed-St-1.jpg",
+	"Offer_Text":"50% OFF",
+	"value":0
+},
+{    
+    "id": 5,
+	"Brand_name": "Only",
+	"Product_name": "Women Jeans",
+	"Quantity":10,
+	"Price":1100,
+	"MRF":2500,
+	"Image_URL":"https://thumbor.forbes.com/thumbor/640x524/https://blogs-images.forbes.com/forbes-finds/files/2019/05/Parker-Smith-Womens-Bombshell-High-Rise-Skinny-Jeans.jpg?width=960",
+	"Offer_Text":"50% OFF",
+	"value":0
+},
+{    
+    "id": 6,
+	"Brand_name": "And",
+	"Product_name": "Women Jeans",
+	"Quantity":10,
+	"Price":1500,
+	"MRF":2500,
+	"Image_URL":"https://5.imimg.com/data5/GY/QN/MY-3241133/zara-women-jeans-500x500.jpeg",
+	"Offer_Text":"50% OFF",
+	"value":"0"
+},
+{    
+    "id": 7,
+	"Brand_name": "Flying MAchine",
+	"Product_name": "Men Jeans",
+	"Quantity":10,
+	"Price":1300,
+	"MRF":2500,
+	"Image_URL":"https://www.krapstore.com/media/catalog/product/cache/2/image/650x/040ec09b1e35df139433887a97daa66f/k/r/krap_stretch_jeans_0_1.jpg",
+	"Offer_Text":"50% OFF",
+	"value":0
+},
+{    
+    "id": 8,
+	"Brand_name": "Basics",
+	"Product_name": "Men Jeans",
+	"Quantity":10,
+	"Price":500,
+	"MRF":2500,
+	"Image_URL":"https://assets.ajio.com/medias/sys_master/root/hbe/h5a/15138069119006/ajio_grey_tapered_washed_low-rise_tapered_jeans.jpg",
+	"Offer_Text":"50% OFF",
+	"value":0
+},
+{    
+    "id": 9,
+	"Brand_name": "AllenSolly",
+	"Product_name": "Women Jeans",
+	"Quantity":10,
+	"Price":1000,
+	"MRF":2500,
+	"Image_URL":"https://allensolly.imgix.net/img/app/product/3/351772-1737443.jpg",
+	"Offer_Text":"50% OFF",
+	"value":0
+},
+{    
+    "id": 10,
+	"Brand_name": "UCB",
+	"Product_name": "Men Jeans",
+	"Quantity":10,
+	"Price":2000,
+	"MRF":2500,
+	"Image_URL":"https://allensolly.imgix.net/img/app/product/3/351548-1735614.jpg",
+	"Offer_Text":"50% OFF",
+	"value":0
+}
+]
