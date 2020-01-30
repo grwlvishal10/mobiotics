@@ -48,9 +48,7 @@
   font-size: 32px;
   font-weight: bold;
 }
-.off{
-  pointer-events: none;
-}
+
   </style>
 </head>
 <body ng-app="formExample">
@@ -71,7 +69,7 @@
     <p><b>RS&nbsp;{{dt.Price}}</b></p>
     <div layout="row">
     <div flex><button style="background-color:green;color:white;border:0px;padding:5px;"  ng-click="incValue(dt,1)">ADD CART</button></div>
-    <div flex><button class="off" style="border-radius:3px;" ng-click="incValue(dt,1)">+</button>&nbsp;{{dt.value}}
+    <div flex><button  style="border-radius:3px;" ng-click="incValue(dt,1)">+</button>&nbsp;{{dt.value}}
     <button style="border-radius:3px;" ng-click="incValue(dt,0)">-</button></div> 
     </div>
    </div>
