@@ -138,6 +138,7 @@
             }
             else
             {
+              if(data.value>0){
               data.value = data.value-1;
               $scope.totalValue.pop(data);
               for(x in $scope.newData){
@@ -145,7 +146,7 @@
                 $scope.totalQuantity  -= 1;
                 $scope.totalPrice-=data.Price;
               }
-            } 
+            } }
             }
           };
           console.log($scope.totalValue);
